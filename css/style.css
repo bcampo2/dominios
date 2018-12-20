@@ -1,0 +1,44 @@
+* {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: black;
+    width: 100%;
+}
+
+#dominios {
+    color: white;
+}
+
+.fa-plus-square, .fa-arrow-left {
+    font-size: 28px;
+    margin: 8px 0;
+}
+
+.fa-arrow-left {
+    color: black;
+}
+
+p {
+    color: black;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+a { 
+    color: inherit; 
+} 
+
+footer {
+    background: black;
+    color: white;
+    height: 30px;
+    margin-top: 10px;
+    padding-right: 10px;
+    text-align: right;
+    width: 100%;
+}
