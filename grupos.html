@@ -42,34 +42,25 @@
 
         </div>
 
-        <div class="row">
-            <h2 class="col-md-12 text-left">
-                <!-- Conteúdo inserido pelo js -->
-            </h2>
-        </div>
-
-        <div id="lista-dados">
-            <!-- conteudo inserido pelo javascript-->
-        </div>
-
-        <div class="domain-list-model" style="display: none;">
-
-            <div class="row">
-                <div class="domain col-md-4 border border-black">AA</div>
-                <div class="name col-md-6 border border-black">Alcool</div>
-                <div class="col-md-1 border border-black text-center">
-                    <i class="far fa-edit"></i>
-                </div>
-                <div class="col-md-1 border border-black text-center">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-
-        </div>
+        <table id="lista-dados" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="titulo" colspan="4"></th>
+                </tr>
+            </thead>
+            <tbody class="domain-list-model" style="display: none;">
+                <tr>
+                    <th class="domain" scope="row"></th>
+                    <td class="name"></td>
+                    <td class="text-center"><i class="far fa-edit"></i></td>
+                    <td class="text-center"><i class="fas fa-times"></i></td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
     <footer>
-        &copy; Smarty Solutions 2018
+        &copy; Fabrika162 2019
     </footer>
 
     <script src="js/bootstrap.min.js"></script>

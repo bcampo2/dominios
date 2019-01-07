@@ -12,7 +12,7 @@ $(function () {
         
         $.each(dominios, function (i, v) {
 
-            var titulo = $("h2").html(v.domaingroup);
+            var titulo = $(".titulo").html(v.domaingroup);
             var clone = $(".domain-list-model").clone();
             $(clone).addClass("domain-list").removeClass("domain-list-model");
             $(".domain", clone).html(v.domain);
