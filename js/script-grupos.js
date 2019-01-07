@@ -12,12 +12,12 @@ $(function () {
         
         $.each(dominios, function (i, v) {
 
-            var titulo = $(".titulo").html(v.domaingroup);
+            $(".titulo").html(v.domaingroup);
             var clone = $(".domain-list-model").clone();
             $(clone).addClass("domain-list").removeClass("domain-list-model");
             $(".domain", clone).html(v.domain);
             $(".name", clone).html(v.name);
-            $("#lista-dados").append(clone);
+            $("tbody").append(clone);
             $(clone).show();
             
         });        

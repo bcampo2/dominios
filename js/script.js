@@ -12,7 +12,7 @@ $(function () {
             $(clone).addClass("group").removeClass("group-model");
             $("a", clone).html(v.domaingroup);
             $("a", clone).attr("href", "grupos.html#" + v.domaingroup);
-            $("#group-list").append(clone);
+            $("tbody").append(clone);
             $(clone).show();
         });
         
