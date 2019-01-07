@@ -23,7 +23,7 @@ $(function () {
         });        
 
     })
-    
+
     .fail(function () {
         alert("Página não pode ser carregada, favor tentar novamente");
     });

@@ -11,7 +11,7 @@ $(function () {
             var clone = $(".group-model").clone();
             $(clone).addClass("group").removeClass("group-model");
             $("a", clone).html(v.domaingroup);
-            $("a", clone).attr("href", "http://localhost/Tela%20de%20dom%C3%ADnios/dominios/grupos.html#" + v.domaingroup);
+            $("a", clone).attr("href", "grupos.html#" + v.domaingroup);
             $("#group-list").append(clone);
             $(clone).show();
         });
