@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Domínios</title>
+    <title>Grupos</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <h1 id="dominios" class="col-md-12 text-left">
-                    Domínios
+                    Grupos
                 </h1>
             </div>
         </div>
@@ -70,9 +70,20 @@
 
                     <form>
                         <div class="form-group">
-                            <label>Nome</label>
-                            <input type="text" class="form-control" id="novo-grupo"
-                                placeholder="Insirir nome do grupo.">
+                            <label>Domaingroup</label>
+                            <input type="text" class="form-control" id="group-linha" placeholder="Digitar domaingroup.">
+                        </div>
+                        <div class="form-group">
+                            <label>Domain</label>
+                            <input type="text" class="form-control" id="domain-linha" placeholder="Digitar domain.">
+                        </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" id="name-linha" placeholder="Digitar name.">
+                        </div>
+                        <div class="form-group">
+                            <label>Data</label>
+                            <input type="text" class="form-control" id="data-linha" placeholder="Digitar data.">
                         </div>
                     </form>
 
@@ -80,7 +91,7 @@
 
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-primary">Salvar Alterações</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 
                 </div>

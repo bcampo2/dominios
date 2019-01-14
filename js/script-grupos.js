@@ -9,6 +9,7 @@ $(function () {
 
     .done(function( dominios ) {
         
+        console.log(dominios);
         
         $.each(dominios, function (i, v) {
 
@@ -29,22 +30,24 @@ $(function () {
                 $(".domain", clone).html(v.domain.substr(0,2).replace("-",""));
             } else if (emBase64 == "VkVJQ1VMTy5DQVRFR09SSUE=" ) {
                 $(".domain", clone).html(v.domain.substr(0,2).replace("-",""));
+            } else if (emBase64 == "VkVJQ1VMTy5GUk9UQQ==" ) {
+                $(".name", clone).remove();
+            } else if (emBase64 == "VkVJQ1VMTy5DT01CVVNUSVZFTA==" ) {
+                $(".name", clone).remove();
             }
 
         });
 
         $( ".fa-plus-square" ).click(function() {
-            $("#titulo-modal").html("Inserir Nova Linha");
-            $("#nome-linha").attr("placeholder", "Inserir Nome");
-            $("#descricao-linha").attr("placeholder", "Inserir Descrição");
-            $(".btn-primary").html("Salvar Alterações");
+            $("#titulo-modal").html("Inserir Novo Domínio");
+            $(".salva-editar").html("Salvar").attr("id", "botao-adicionar");
         }); 
 
         $( ".fa-edit" ).click(function() {
             $("#titulo-modal").html("Editar informações");
-            $("#nome-linha").attr("placeholder", "Editar Nome");
-            $("#descricao-linha").attr("placeholder", "Editar Descrição");
-        });  
+            $(".salva-editar").html("Editar Alterações").attr("id", "botao-editar");
+        }); 
+        
     })
     
 

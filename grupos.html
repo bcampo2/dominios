@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Grupos</title>
+    <title>Domínios</title>
 </head>
 
 <body>
@@ -84,12 +84,20 @@
 
                     <form>
                         <div class="form-group">
-                            <label>Nome</label>
-                            <input type="text" class="form-control" id="nome-linha" placeholder="Insirir nome.">
+                            <label>Domaingroup</label>
+                            <input type="text" class="form-control" id="group-linha" placeholder="Digitar domaingroup.">
                         </div>
                         <div class="form-group">
-                            <label>Descrição</label>
-                            <input type="text" class="form-control" id="descricao-linha" placeholder="Insirir descrição.">
+                            <label>Domain</label>
+                            <input type="text" class="form-control" id="domain-linha" placeholder="Digitar domain.">
+                        </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" id="name-linha" placeholder="Digitar name.">
+                        </div>
+                        <div class="form-group">
+                            <label>Data</label>
+                            <input type="text" class="form-control" id="data-linha" placeholder="Digitar data.">
                         </div>
                     </form>
 
@@ -97,7 +105,7 @@
 
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-primary">Salvar Alterações</button>
+                    <button id="btn-salvar-editar" type="button" class="btn btn-primary salva-editar">Salvar Alterações</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 
                 </div>
@@ -126,7 +134,7 @@
 
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-primary">Apagar</button>
+                    <button id="btn-apagar" type="button" class="btn btn-primary">Apagar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 
                 </div>
