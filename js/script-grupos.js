@@ -45,9 +45,9 @@ $(function () {
 
         $( ".fa-edit" ).click(function() {
             $("#titulo-modal").html("Editar informações");
-            $(".salva-editar").html("Editar Alterações").attr("id", "botao-editar");
+            $(".salva-editar").html("Salvar Alterações").attr("id", "botao-editar");
         }); 
-        
+
     })
     
 
