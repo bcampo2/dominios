@@ -37,7 +37,7 @@
             </div>
 
             <div id="mais" class="col-md-6 text-right">
-                <i class="far fa-plus-square"></i>
+                <a href="#" data-toggle="modal" data-target="#modal-dominio"><i class="far fa-plus-square"></i></a>
             </div>
 
         </div>
@@ -52,8 +52,12 @@
                 <tr class="domain-list-model" style="display: none;">
                     <th class="domain" scope="row"></th>
                     <td class="name"></td>
-                    <td class="text-center"><i class="far fa-edit"></i></td>
-                    <td class="text-center"><i class="fas fa-times"></i></td>
+                    <td class="text-center">
+                        <a href="#" id="editar" data-toggle="modal" data-target="#modal-dominio"><i class="far fa-edit"></i></a>
+                    </td>
+                    <td class="text-center">
+                        <a href="#" id="apagar" data-toggle="modal" data-target="#modal-apagar"><i class="fas fa-times"></i></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -62,6 +66,74 @@
     <footer>
         &copy; Fabrika162 2019
     </footer>
+
+
+    <!-- Modal Adicionar e Editar -->
+
+    <div class="modal fade" id="modal-dominio" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="titulo-modal" class="modal-title">Inserir Nova Linha</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" class="form-control" id="nome-linha" placeholder="Insirir nome.">
+                        </div>
+                        <div class="form-group">
+                            <label>Descrição</label>
+                            <input type="text" class="form-control" id="descricao-linha" placeholder="Insirir descrição.">
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary">Salvar Alterações</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Apagar-->
+
+    <div class="modal fade" id="modal-apagar" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="titulo-modal" class="modal-title">Apagar Informações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <p>Tem certeza que deseja apagar as informações?</p>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary">Apagar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script-grupos.js"></script>
