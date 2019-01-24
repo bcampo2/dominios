@@ -18,9 +18,11 @@
     <header>
         <div class="container">
             <div class="row">
+
                 <h1 id="dominios" class="col-md-12 text-left">
                     Grupos
                 </h1>
+
             </div>
         </div>
 
@@ -30,11 +32,13 @@
         <div class="row justify-content-md-center">
             <div id="mais" class="text-right col-md-12">
 
+                <!-- Adicionar novo domaingroup -->
                 <a href="#" data-toggle="modal" data-target="#modal-dominio"><i class="far fa-plus-square"></i></a>
 
             </div>
         </div>
 
+        <!-- tabela com os nomes de domínios -->
         <table id="group-list" class="table table-bordered">
             <tbody>
                 <tr class="group-model" style="display: none;">
@@ -52,18 +56,18 @@
         &copy; Fabrika162 2019
     </footer>
 
-
-
-    <!-- Modal -->
+    <!-- Modal para adição de domaingroup-->
 
     <div class="modal fade" id="modal-dominio" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+
                     <h5 class="modal-title">Inserir Novo Grupo</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
+
                 </div>
 
                 <div class="modal-body">
@@ -83,7 +87,7 @@
                         </div>
                         <div class="form-group">
                             <label>Data</label>
-                            <textarea id="data-adicionar" class="form-control" rows="4" name="data" placeholder="Digitar data."></textarea>
+                            <textarea id="data-adicionar" class="form-control" rows="6" name="data" placeholder="Digitar data."></textarea>
                         </div>
                     </form>
 

@@ -1,5 +1,7 @@
 $(function () {
 
+    // Ajax para leitura de dados da API
+
     var groups = $.ajax({
         url: "http://staging.dominios.api.fabrika162.com.br/domains/groups"
     })
@@ -7,6 +9,8 @@ $(function () {
     .done(function( grupos ) {
         
         $.each(grupos, function (i, v) {
+
+            // Função para escrever a tabela através dos dados da API
             
             var clone = $(".group-model").clone();
             $(clone).addClass("group").removeClass("group-model");
@@ -15,13 +19,17 @@ $(function () {
             $("tbody").append(clone);
             $(clone).show();
 
+            // Botão adicionar
+
             $('.fa-plus-square').click( function() {
                 $("input.form-control").val("");
                 $("#input-adicionar").val(v.domaingroup);
             });
         });
 
-        $('#btn-adicionar').click( function() {
+        // Ajax para adicionar novo domínio
+
+        $('#btn-adicionar').click( function adicionarDominio() {
 
             $.ajax({
                 url: 'http://staging.dominios.api.fabrika162.com.br/domains',

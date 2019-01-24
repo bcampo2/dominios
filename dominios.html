@@ -19,29 +19,31 @@
     <header>
         <div class="container">
             <div class="row">
+
                 <h1 id="dominios" class="col-md-12 text-left">
                     Domínios
                 </h1>
+
             </div>
         </div>
     </header>
 
     <div class="container">
-
         <div class="row">
 
             <div class="col-md-6 text-left">
+                <!-- botão de retornar para página inicial -->
                 <a href="index.html">
                     <i class="fas fa-arrow-left"></i>
                 </a>
             </div>
-
+            <!-- botão para adicinar linha -->
             <div id="mais" class="col-md-6 text-right">
                 <a id="adicionar-linha" href="#" data-toggle="modal" data-target="#modal-adicionar"><i class="far fa-plus-square"></i></a>
             </div>
 
         </div>
-
+        <!-- Tabela com informações de domínios -->
         <table id="lista-dados" class="table table-bordered">
             <thead>
                 <tr>
@@ -53,9 +55,11 @@
                     <th class="domain" scope="row"></th>
                     <td class="name"></td>
                     <td class="text-center">
+                        <!-- botão para editar linha -->
                         <a href="#" id="editar" data-toggle="modal" data-target="#modal-editar"><i class="far fa-edit"></i></a>
                     </td>
                     <td class="text-center">
+                        <!-- botão para apagar linha -->
                         <a href="#" id="apagar" data-toggle="modal" data-target="#modal-apagar"><i class="fas fa-times"></i></a>
                     </td>
                 </tr>
@@ -68,16 +72,18 @@
     </footer>
 
 
-    <!-- Modal Adicionar -->
+    <!-- Modal adicionar -->
 
     <div class="modal fade" id="modal-adicionar" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+
                     <h5 id="titulo-modal" class="modal-title">Inserir Nova Linha</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
+
                 </div>
 
                 <div class="modal-body">
@@ -96,7 +102,7 @@
                         </div>
                         <div class="form-group">
                             <label>Data</label>
-                            <textarea id="data-adicionar" class="form-control" rows="4" name="data" placeholder="Digitar data."></textarea>
+                            <textarea id="data-adicionar" class="form-control" rows="6" name="data" placeholder="Digitar data."></textarea>
                         </div>
 
                     </form>
@@ -114,16 +120,18 @@
         </div>
     </div>
 
-    <!-- Modal Editar -->
+    <!-- Modal editar -->
 
     <div class="modal fade" id="modal-editar" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+
                     <h5 id="titulo-modal" class="modal-title">Editar Informações</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
+
                 </div>
 
                 <div class="modal-body">
@@ -141,7 +149,7 @@
                         </div>
                         <div class="form-group">
                             <label>Data</label>
-                            <textarea id="data-editar" class="form-control" rows="4" name="data" placeholder="Digitar data."></textarea>
+                            <textarea id="data-editar" class="form-control" rows="6" name="data" placeholder="Digitar data."></textarea>
                         </div>
                     </form>
 
@@ -158,16 +166,18 @@
         </div>
     </div>
 
-    <!-- Modal Apagar-->
+    <!-- Modal apagar-->
 
     <div class="modal fade" id="modal-apagar" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    
                     <h5 id="titulo-modal" class="modal-title">Apagar Informações</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
+
                 </div>
 
                 <div class="modal-body">

@@ -2,6 +2,7 @@ $(function () {
 
     var emBase64 = btoa(window.location.hash.replace("#",""));
    
+    // Ajax para leitura de dados do domínio clicado
   
     $.ajax({
         url: "http://staging.dominios.api.fabrika162.com.br/domains/" + emBase64
@@ -10,6 +11,8 @@ $(function () {
     .done(function( dominios ) {
         console.log(dominios);
         $.each(dominios, function (i, v) {
+
+            // Função para escrever a tabela através dos dados da API
 
             $(".titulo").html(v.domaingroup.replace("."," ").replace("."," "));
             var clone = $(".domain-list-model").clone();
@@ -22,6 +25,8 @@ $(function () {
             $(clone).attr("attr-data",v.data);
             $("tbody").append(clone);
             $(clone).show();
+
+            // Regras para escrever determinadas páginas
 
             if (emBase64 == "VkVJQ1VMTy5DQVJST0NFUklB" ) {
                 $(".domain", clone).html(v.domain.substr(0,3));
@@ -39,31 +44,35 @@ $(function () {
                 $(".name", clone).remove();
             }
 
+            // Botão para adicionar linha
+
             $('.fa-plus-square').click( function() {
                 $("textarea").val("");
                 $("input.form-control").val("");
                 $("#input-adicionar").val(v.domaingroup);
                 $("textarea").val("{ }");
             });
-            
-
-            
-
+   
         });
 
-        $('.fa-edit').click( function() {
-            $("textarea").val("");
+        // Botão para editar linha
 
-            var tr = $(this).parents("tr");
+        $('.fa-edit').click( function editarLinha () {
             
+            var tr = $(this).parents("tr");
+
+            $("textarea").val("");
             $("input.form-control").val("");
             $("#editar-domain").val($(tr).attr("attr-domain"));
             $("#editar-domaingroup").val($(tr).attr("attr-domaingroup"));
             $("#editar-name").val($(tr).attr("attr-name"));
             $("#data-editar").val($(tr).attr("attr-data"));
+
         });
         
-        $('#btn-adicionar').click( function() {
+        // Ajax para adicionar linha
+
+        $('#btn-adicionar').click( function adicionarLinha() {
 
             $.ajax({
                 url: 'http://staging.dominios.api.fabrika162.com.br/domains',
@@ -82,6 +91,8 @@ $(function () {
             });
             
         });
+
+        // Ajax para editar dados
 
         $('#btn-editar').click( function() {
 
@@ -105,7 +116,6 @@ $(function () {
  
     })
 
-    
     .fail(function () {
         alert("Página não pode ser carregada, favor tentar novamente");
     });
