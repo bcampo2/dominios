@@ -3,23 +3,26 @@ $(function () {
     var emBase64 = btoa(window.location.hash.replace("#",""));
    
   
-    var dominios = $.ajax({
+    $.ajax({
         url: "http://staging.dominios.api.fabrika162.com.br/domains/" + emBase64
     })
 
     .done(function( dominios ) {
-        
         console.log(dominios);
-        
         $.each(dominios, function (i, v) {
 
-            $(".titulo").html(v.domaingroup);
+            $(".titulo").html(v.domaingroup.replace("."," ").replace("."," "));
             var clone = $(".domain-list-model").clone();
             $(clone).addClass("domain-list").removeClass("domain-list-model");
             $(".domain", clone).html(v.domain);
             $(".name", clone).html(v.name);
+            $(clone).attr("attr-domain",v.domain);
+            $(clone).attr("attr-domaingroup",v.domaingroup);
+            $(clone).attr("attr-name",v.name);
+            $(clone).attr("attr-data",v.data);
             $("tbody").append(clone);
             $(clone).show();
+
             if (emBase64 == "VkVJQ1VMTy5DQVJST0NFUklB" ) {
                 $(".domain", clone).html(v.domain.substr(0,3));
             } else if (emBase64 == "VkVJQ1VMTy5USVBP" ) {
@@ -36,26 +39,76 @@ $(function () {
                 $(".name", clone).remove();
             }
 
+            $('.fa-plus-square').click( function() {
+                $("textarea").val("");
+                $("input.form-control").val("");
+                $("#input-adicionar").val(v.domaingroup);
+                $("textarea").val("{ }");
+            });
+            
+
+            
+
         });
 
-        $( ".fa-plus-square" ).click(function() {
-            $("#titulo-modal").html("Inserir Novo Domínio");
-            $(".salva-editar").html("Salvar").attr("id", "botao-adicionar");
-        }); 
+        $('.fa-edit').click( function() {
+            $("textarea").val("");
 
-        $( ".fa-edit" ).click(function() {
-            $("#titulo-modal").html("Editar informações");
-            $(".salva-editar").html("Salvar Alterações").attr("id", "botao-editar");
-        }); 
+            var tr = $(this).parents("tr");
+            
+            $("input.form-control").val("");
+            $("#editar-domain").val($(tr).attr("attr-domain"));
+            $("#editar-domaingroup").val($(tr).attr("attr-domaingroup"));
+            $("#editar-name").val($(tr).attr("attr-name"));
+            $("#data-editar").val($(tr).attr("attr-data"));
+        });
+        
+        $('#btn-adicionar').click( function() {
 
+            $.ajax({
+                url: 'http://staging.dominios.api.fabrika162.com.br/domains',
+                type: 'post',
+                dataType: 'json',
+                data: $('#formAdicionar').serialize(),
+                success: function(data) {
+                    
+                    alert("Dados salvos com sucesso!");
+                    window.location.reload();
+                    
+                },
+                error: function(data) {
+                    alert("Erro ao salvar informações, favor preencher os campos ou verificar dados digitados!");
+                }
+            });
+            
+        });
+
+        $('#btn-editar').click( function() {
+
+            $.ajax({
+                url: 'http://staging.dominios.api.fabrika162.com.br/domains',
+                type: 'post',
+                dataType: 'json',
+                data: $('#formEditar').serialize(),
+                success: function(data) {
+                    
+                    alert("Dados editados com sucesso!");
+                    window.location.reload();
+                    
+                },
+                error: function(data) {
+                    alert("Erro ao salvar alterações, favor preencher os campos ou verificar dados digitados!");
+                }
+            });
+            
+        });
+ 
     })
-    
 
+    
     .fail(function () {
         alert("Página não pode ser carregada, favor tentar novamente");
     });
-
-    
 
 });
 

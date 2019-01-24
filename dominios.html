@@ -37,7 +37,7 @@
             </div>
 
             <div id="mais" class="col-md-6 text-right">
-                <a href="#" data-toggle="modal" data-target="#modal-dominio"><i class="far fa-plus-square"></i></a>
+                <a id="adicionar-linha" href="#" data-toggle="modal" data-target="#modal-adicionar"><i class="far fa-plus-square"></i></a>
             </div>
 
         </div>
@@ -53,7 +53,7 @@
                     <th class="domain" scope="row"></th>
                     <td class="name"></td>
                     <td class="text-center">
-                        <a href="#" id="editar" data-toggle="modal" data-target="#modal-dominio"><i class="far fa-edit"></i></a>
+                        <a href="#" id="editar" data-toggle="modal" data-target="#modal-editar"><i class="far fa-edit"></i></a>
                     </td>
                     <td class="text-center">
                         <a href="#" id="apagar" data-toggle="modal" data-target="#modal-apagar"><i class="fas fa-times"></i></a>
@@ -68,9 +68,9 @@
     </footer>
 
 
-    <!-- Modal Adicionar e Editar -->
+    <!-- Modal Adicionar -->
 
-    <div class="modal fade" id="modal-dominio" tabindex="-1" role="dialog">
+    <div class="modal fade" id="modal-adicionar" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -82,22 +82,66 @@
 
                 <div class="modal-body">
 
-                    <form>
+                    <form id="formAdicionar">
                         <div class="form-group">
-                            <label>Domaingroup</label>
-                            <input type="text" class="form-control" id="group-linha" placeholder="Digitar domaingroup.">
+                            <input id="input-adicionar" type="hidden" class="form-control" name="domaingroup" placeholder="Digitar domaingroup.">
                         </div>
                         <div class="form-group">
                             <label>Domain</label>
-                            <input type="text" class="form-control" id="domain-linha" placeholder="Digitar domain.">
+                            <input type="text" class="form-control" name="domain" placeholder="Digitar domain.">
                         </div>
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" id="name-linha" placeholder="Digitar name.">
+                            <input type="text" class="form-control" name="name" placeholder="Digitar name.">
                         </div>
                         <div class="form-group">
                             <label>Data</label>
-                            <textarea class="form-control" rows="4" id="data-linha" placeholder="Digitar data."></textarea>
+                            <textarea id="data-adicionar" class="form-control" rows="4" name="data" placeholder="Digitar data."></textarea>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <input id="btn-adicionar" class="btn btn-primary salva-editar" type="submit" value="Salvar">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Editar -->
+
+    <div class="modal fade" id="modal-editar" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="titulo-modal" class="modal-title">Editar Informações</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="formEditar">
+                        <div class="form-group">
+                            <input id="editar-domaingroup" type="hidden" class="form-control" name="domaingroup" placeholder="Digitar domaingroup.">
+                        </div>
+                        <div class="form-group">
+                            <input id="editar-domain" type="hidden" class="form-control" name="domain" placeholder="Digitar domain.">
+                        </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input id="editar-name" type="text" class="form-control" name="name" placeholder="Digitar name.">
+                        </div>
+                        <div class="form-group">
+                            <label>Data</label>
+                            <textarea id="data-editar" class="form-control" rows="4" name="data" placeholder="Digitar data."></textarea>
                         </div>
                     </form>
 
@@ -105,7 +149,7 @@
 
                 <div class="modal-footer">
 
-                    <button id="btn-salvar-editar" type="button" class="btn btn-primary salva-editar">Salvar Alterações</button>
+                    <input id="btn-editar" class="btn btn-primary salva-editar" type="submit" value="Salvar Alterações">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 
                 </div>
@@ -134,7 +178,7 @@
 
                 <div class="modal-footer">
 
-                    <button id="btn-apagar" type="button" class="btn btn-primary">Apagar</button>
+                    <button id="btn-apagar" type="button" class="btn btn-disabled" disabled>Apagar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 
                 </div>
