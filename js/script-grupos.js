@@ -69,7 +69,18 @@ $(function () {
             $("#data-editar").val($(tr).attr("attr-data"));
 
         });
-        
+
+        // Botão para apagar linha
+
+        $('.fa-times').click( function apagarLinha () {
+            
+            tr = $(this).parents("tr");
+
+            $(tr).attr("attr-domain");
+            $(tr).attr("attr-domaingroup");
+            
+        });
+
         // Ajax para adicionar linha
 
         $('#btn-adicionar').click( function adicionarLinha() {
@@ -94,7 +105,7 @@ $(function () {
 
         // Ajax para editar dados
 
-        $('#btn-editar').click( function() {
+        $('#btn-editar').click( function editarDados () {
 
             $.ajax({
                 url: 'http://staging.dominios.api.fabrika162.com.br/domains',
@@ -109,6 +120,29 @@ $(function () {
                 },
                 error: function(data) {
                     alert("Erro ao salvar alterações, favor preencher os campos ou verificar dados digitados!");
+                }
+            });
+            
+        });
+
+        // Ajax para apagar dados
+
+        $('#btn-apagar').click( function apagarDominio() {
+
+            // var base64 =  btoa($(tr).attr("attr-domain"));
+
+            $.ajax({
+                url: 'http://staging.dominios.api.fabrika162.com.br/domains/' + $(tr).attr("attr-domaingroup") + "/" 
+                + $(tr).attr("attr-domain"),
+                type: 'DELETE',
+                success: function(data) {
+                    
+                    alert("Dados deletados com sucesso!");
+                    window.location.reload();
+                    
+                },
+                error: function(data) {
+                    alert("Erro ao apagar informações.");
                 }
             });
             

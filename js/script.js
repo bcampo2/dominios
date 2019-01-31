@@ -14,8 +14,10 @@ $(function () {
             
             var clone = $(".group-model").clone();
             $(clone).addClass("group").removeClass("group-model");
-            $("a", clone).html(v.domaingroup.replace("."," ").replace("."," "));
-            $("a", clone).attr("href", "dominios.html#" + v.domaingroup);
+            $("a#group-name", clone).html(v.domaingroup.replace("."," ").replace("."," "));
+            $("a#group-name", clone).attr("href", "dominios.html#" + v.domaingroup);
+            $(clone).attr("attr-domain",v.domain);
+            $(clone).attr("attr-domaingroup",v.domaingroup);
             $("tbody").append(clone);
             $(clone).show();
 
@@ -48,8 +50,7 @@ $(function () {
             });
             
         });
-        
-        
+
     })
     
     .fail(function () {
